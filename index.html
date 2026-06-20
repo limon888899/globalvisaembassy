@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Visa Tracker</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ======================================================
+     PAGE 1 — LOGIN
+     ====================================================== -->
+<section id="page-login" class="page is-active">
+  <div class="page-wrap">
+
+    <header class="top-bar">
+      <div class="logo-group">
+        <div class="logo-mark">
+          <svg viewBox="0 0 48 48" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="21" stroke="#ffffff" stroke-width="2"/>
+            <ellipse cx="24" cy="24" rx="9" ry="21" stroke="#ffffff" stroke-width="1.4"/>
+            <line x1="3" y1="24" x2="45" y2="24" stroke="#ffffff" stroke-width="1.4"/>
+            <path d="M24 7c5 4 8 10 8 17s-3 13-8 17c-5-4-8-10-8-17s3-13 8-17z" stroke="#ffffff" stroke-width="1.2" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <strong>Global Visa Tracker</strong>
+          <span>CLIENT PORTAL</span>
+        </div>
+      </div>
+      <div class="top-bar-tag">Client Login</div>
+    </header>
+
+    <main class="main-area">
+      <div class="login-card">
+
+        <div class="card-header">
+          <h1>Sign In to Your Account</h1>
+          <p>Access your visa application dashboard securely.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+
+          <div class="field-group">
+            <label for="username">Username or Email</label>
+            <div class="input-shell" id="userShell">
+              <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <input type="text" id="username" name="username" placeholder="Enter your username or email" autocomplete="username" required>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="password">Password</label>
+            <div class="input-shell" id="passShell">
+              <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+              <button type="button" class="toggle-eye" id="toggleEye" aria-label="Show or hide password">
+                <svg id="eyeOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="19" height="19">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                <svg id="eyeClosed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="19" height="19" style="display:none;">
+                  <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a18.5 18.5 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+                  <line x1="1" y1="1" x2="23" y2="23"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <label class="remember-check">
+              <input type="checkbox" id="remember">
+              <span>Remember me</span>
+            </label>
+            <a href="#" class="forgot-link">Forgot password?</a>
+          </div>
+
+          <div class="form-error" id="formError"></div>
+
+          <button type="submit" class="btn-login" id="loginBtn">
+            <span class="btn-text">Sign In</span>
+            <span class="btn-spinner" id="btnSpinner"></span>
+          </button>
+
+        </form>
+
+        <p class="signup-note">Don't have an account yet? <a href="#">Create one here</a></p>
+      </div>
+    </main>
+
+    <footer class="bottom-bar">
+      <p>&copy; 2026 Global Visa Tracker. All rights reserved.</p>
+    </footer>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     PAGE 2 — DASHBOARD
+     ====================================================== -->
+<section id="page-dashboard" class="page">
+  <div class="page-wrap">
+
+    <header class="top-bar">
+      <div class="logo-group">
+        <div class="logo-mark">
+          <svg viewBox="0 0 48 48" width="26" height="26" fill="none"><circle cx="24" cy="24" r="21" stroke="#fff" stroke-width="2"/><ellipse cx="24" cy="24" rx="9" ry="21" stroke="#fff" stroke-width="1.3"/><line x1="3" y1="24" x2="45" y2="24" stroke="#fff" stroke-width="1.3"/></svg>
+        </div>
+        <div class="logo-text">
+          <strong>Global Visa Tracker</strong>
+          <span>CLIENT PORTAL</span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="user-chip">
+          <div class="user-avatar">JD</div>
+          <span class="user-name">Jamal Deen</span>
+        </div>
+        <button class="logout-btn" title="Log out" data-nav="page-login">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="main-area">
+
+      <div class="page-intro">
+        <h1>Select a Destination</h1>
+        <p>Choose the country your application was submitted for to view your current visa status.</p>
+      </div>
+
+      <div class="country-grid">
+
+        <a class="country-card" href="#" data-nav="page-status" data-country="australia" data-country-label="Australia">
+          <div class="card-watermark">
+            <svg viewBox="0 0 64 64" width="100" height="100" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M6 48 Q16 30 26 48 Z"/><path d="M20 48 Q30 26 40 48 Z"/><path d="M34 48 Q44 30 54 48 Z"/><line x1="2" y1="48" x2="58" y2="48"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">CANBERRA</div>
+            <h3>Australia</h3>
+            <p>Skilled Worker, Student &amp; Family Visas</p>
+            <div class="card-cta">Check status <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <a class="country-card" href="#" data-nav="page-status" data-country="usa" data-country-label="United States">
+          <div class="card-watermark">
+            <svg viewBox="0 0 64 64" width="100" height="100" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M32 8 a8 8 0 0 1 8 8 v2 h-16 v-2 a8 8 0 0 1 8 -8 z"/><rect x="28" y="18" width="8" height="6"/><rect x="14" y="24" width="36" height="6"/><rect x="10" y="30" width="44" height="18"/><line x1="4" y1="48" x2="60" y2="48"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">WASHINGTON, D.C.</div>
+            <h3>United States</h3>
+            <p>H-1B, F-1 Student &amp; Immigrant Visas</p>
+            <div class="card-cta">Check status <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <a class="country-card" href="#" data-nav="page-status" data-country="canada" data-country-label="Canada">
+          <div class="card-watermark">
+            <svg viewBox="0 0 64 64" width="100" height="100" fill="none" stroke="currentColor" stroke-width="1.2">
+              <path d="M32 6 L36 18 L46 14 L42 24 L54 26 L44 32 L50 42 L38 39 L39 50 L32 42 L25 50 L26 39 L14 42 L20 32 L10 26 L22 24 L18 14 L28 18 Z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">OTTAWA</div>
+            <h3>Canada</h3>
+            <p>Express Entry, PNP &amp; Study Permits</p>
+            <div class="card-cta">Check status <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <a class="country-card" href="#" data-nav="page-status" data-country="italy" data-country-label="Italy">
+          <div class="card-watermark">
+            <svg viewBox="0 0 64 64" width="100" height="100" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="8" y="30" width="48" height="18" rx="2"/><path d="M14 30 a4 5 0 0 1 8 0 M26 30 a4 5 0 0 1 8 0 M38 30 a4 5 0 0 1 8 0"/><line x1="4" y1="48" x2="60" y2="48"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">ROME</div>
+            <h3>Italy</h3>
+            <p>Work Permit &amp; Long-Stay Visas</p>
+            <div class="card-cta">Check status <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <a class="country-card" href="#" data-nav="page-status" data-country="uk" data-country-label="United Kingdom">
+          <div class="card-watermark">
+            <svg viewBox="0 0 64 64" width="100" height="100" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="26" y="10" width="12" height="32"/><circle cx="32" cy="20" r="5"/><path d="M22 42 L42 42 L40 50 L24 50 Z"/><line x1="14" y1="50" x2="50" y2="50"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">LONDON</div>
+            <h3>United Kingdom</h3>
+            <p>Skilled Worker &amp; Student Visas</p>
+            <div class="card-cta">Check status <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+        <a class="country-card" href="#" data-nav="page-status" data-country="germany" data-country-label="Germany">
+          <div class="card-watermark">
+            <svg viewBox="0 0 64 64" width="100" height="100" fill="none" stroke="currentColor" stroke-width="1.2">
+              <rect x="10" y="20" width="4" height="28"/><rect x="20" y="20" width="4" height="28"/><rect x="30" y="20" width="4" height="28"/><rect x="40" y="20" width="4" height="28"/><rect x="50" y="20" width="4" height="28"/><rect x="6" y="14" width="52" height="6"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-eyebrow">BERLIN</div>
+            <h3>Germany</h3>
+            <p>EU Blue Card &amp; Job Seeker Visas</p>
+            <div class="card-cta">Check status <span class="arrow">→</span></div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+
+    <footer class="disclaimer-bar">
+      <p>⚠️ This is an informational client portal operated by Global Visa Tracker. It does not represent any government or embassy, and results shown here are not an official immigration decision. Always confirm final outcomes with the relevant government authority.</p>
+    </footer>
+
+  </div>
+</section>
+
+<!-- ======================================================
+     PAGE 3 — STATUS CHECK
+     ====================================================== -->
+<section id="page-status" class="page">
+  <div class="page-wrap">
+
+    <header class="top-bar">
+      <div class="logo-group">
+        <div class="logo-mark">
+          <svg viewBox="0 0 48 48" width="26" height="26" fill="none"><circle cx="24" cy="24" r="21" stroke="#fff" stroke-width="2"/><ellipse cx="24" cy="24" rx="9" ry="21" stroke="#fff" stroke-width="1.3"/><line x1="3" y1="24" x2="45" y2="24" stroke="#fff" stroke-width="1.3"/></svg>
+        </div>
+        <div class="logo-text">
+          <strong>Global Visa Tracker</strong>
+          <span>CLIENT PORTAL</span>
+        </div>
+      </div>
+      <button class="back-link" data-nav="page-dashboard">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>Back to Dashboard</span>
+      </button>
+    </header>
+
+    <main class="main-area">
+
+      <div class="status-card">
+
+        <div class="status-card-head">
+          <div class="country-tag" id="countryTag">Country</div>
+          <h1>Your Application Status</h1>
+          <p>Showing the latest status for the application linked to your account.</p>
+        </div>
+
+        <!-- ===========================================================
+             NOTE FOR DEVELOPER:
+             Populate this section from your authenticated backend
+             (e.g. GET /api/applications/me), scoped to the logged-in
+             client's session. Do NOT accept a passport number or
+             phone number here to look up other people's records —
+             status must only ever be shown for the account that is
+             currently logged in.
+             =========================================================== -->
+
+        <div class="application-summary" id="applicationSummary">
+          <div class="summary-row">
+            <span class="summary-label">Applicant Name</span>
+            <span class="summary-value" id="applicantName">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Application Reference</span>
+            <span class="summary-value" id="applicationRef">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Visa Category</span>
+            <span class="summary-value" id="visaCategory">—</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Submitted On</span>
+            <span class="summary-value" id="submittedDate">—</span>
+          </div>
+          <div class="summary-row highlight">
+            <span class="summary-label">Current Status</span>
+            <span class="status-badge" id="statusBadge">
+              <span class="status-dot"></span>
+              <span id="statusText">Loading…</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+          <div class="empty-icon">📄</div>
+          <h3>No live data connected yet</h3>
+          <p>This panel is a front-end template. Connect it to your backend so it loads the signed-in client's real application record.</p>
+        </div>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline-step done">
+            <div class="step-dot"></div>
+            <div class="step-text"><strong>Application Received</strong><span>Documents submitted to our office</span></div>
+          </div>
+          <div class="timeline-step done">
+            <div class="step-dot"></div>
+            <div class="step-text"><strong>Document Verification</strong><span>Reviewed by our case officer</span></div>
+          </div>
+          <div class="timeline-step active">
+            <div class="step-dot"></div>
+            <div class="step-text"><strong>Under Embassy Review</strong><span>Awaiting decision from authority</span></div>
+          </div>
+          <div class="timeline-step">
+            <div class="step-dot"></div>
+            <div class="step-text"><strong>Final Decision</strong><span>Outcome communicated to applicant</span></div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="disclaimer-bar">
+      <p>⚠️ This is an informational client portal operated by Global Visa Tracker. It does not represent any government or embassy, and the status shown is not an official immigration decision. Always confirm final outcomes with the relevant government authority.</p>
+    </footer>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
