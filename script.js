@@ -1,14 +1,19 @@
 // আপনার সুপাবেজ কনফিগারেশন
-const SUPABASE_URL = 'https://nrwnsedtvkxkdhmvmoga.supabase.co'; // আপনার প্রজেক্টের URL
-const SUPABASE_ANON_KEY = 'sb_publishable_v9Bas6zol_BdqscwLftaZA_OYnWIuJ3' // আপনার ড্যাশবোর্ডে পাওয়া Publishable Key টি এখানে বসান
+const SUPABASE_URL = 'https://nrwnsedtvkxkdhmvmoga.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_v9Bas6zol_BdqscwLftaZA_OYnWIuJ3';
 
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-/* ===========================
-   Global Visa Tracker — Combined Script
+
+/* =========================================================
+   Global Visa Tracker - Combined Script
    (Login + Dashboard + Status Check)
-   =========================== */
+   ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
+    console.log("Supabase initialized successfully!");
+    
+    // এখানে আপনার আগের বাকি কোডগুলো (যেমন নেভিগেশন বা ফর্ম হ্যান্ডলিং) থাকবে
+});
 
   /* =========================================================
      SECTION A — Simple page navigation (no real routing/URLs)
