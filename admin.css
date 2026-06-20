@@ -1,0 +1,477 @@
+/* =========================================================
+   ADMIN PANEL স্টাইলশিট
+   থিম: নেভি ব্লু (#0B2545) + হোয়াইট
+   ========================================================= */
+
+:root {
+  /* --- কালার টোকেন --- */
+  --navy-dark: #0B2545;     /* মূল নেভি ব্লু (হেডার, বাটন) */
+  --navy-mid: #13315C;      /* হালকা নেভি (hover, card header) */
+  --navy-light: #2E5C99;    /* এক্সেন্ট ব্লু (লিংক, ফোকাস) */
+  --white: #FFFFFF;
+  --bg-light: #F4F6F9;      /* পেজ ব্যাকগ্রাউন্ড */
+  --border-color: #DCE3EC;
+
+  --text-main: #1B2733;
+  --text-muted: #5C6B7A;
+
+  --success: #1E8E5A;       /* Approved */
+  --success-bg: #E7F5EE;
+  --warning: #B5790A;       /* Pending */
+  --warning-bg: #FBF1DD;
+  --danger: #C0392B;        /* Rejected */
+  --danger-bg: #FBEAE8;
+
+  --radius: 8px;
+  --shadow: 0 4px 16px rgba(11, 37, 69, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-main);
+}
+
+.screen {
+  min-height: 100vh;
+}
+
+/* =========================================================
+   লগইন স্ক্রিন
+   ========================================================= */
+
+#loginScreen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg, var(--navy-dark) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+  padding: 20px;
+}
+
+.login-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius);
+  padding: 36px 32px;
+  box-shadow: var(--shadow);
+}
+
+.login-card__brand {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.login-card__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--navy-dark);
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.login-card__title {
+  margin: 0;
+  font-size: 22px;
+  color: var(--navy-dark);
+}
+
+.login-card__subtitle {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.field input {
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.field input:focus {
+  border-color: var(--navy-light);
+  box-shadow: 0 0 0 3px rgba(46, 92, 153, 0.15);
+}
+
+.error-message {
+  background: var(--danger-bg);
+  color: var(--danger);
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* =========================================================
+   বাটন
+   ========================================================= */
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: background 0.15s ease, opacity 0.15s ease;
+}
+
+.btn--block {
+  width: 100%;
+}
+
+.btn--small {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.btn--primary {
+  background: var(--navy-dark);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--navy-mid);
+}
+
+.btn--primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--navy-dark);
+  border: 1px solid var(--border-color);
+}
+
+.btn--ghost:hover {
+  background: var(--bg-light);
+}
+
+.btn--danger-outline {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.btn--success-outline {
+  background: transparent;
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+/* =========================================================
+   ড্যাশবোর্ড - টপবার
+   ========================================================= */
+
+.topbar {
+  background: var(--navy-dark);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar__logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.topbar__title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar__admin-name {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.topbar .btn--ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--white);
+}
+
+.topbar .btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================================
+   ড্যাশবোর্ড - মেইন কন্টেন্ট
+   ========================================================= */
+
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--navy-dark);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-card--pending { border-left-color: var(--warning); }
+.stat-card--approved { border-left-color: var(--success); }
+.stat-card--rejected { border-left-color: var(--danger); }
+
+.stat-card__value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--navy-dark);
+}
+
+.stat-card__label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.panel {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel__title {
+  margin: 0 0 14px;
+  font-size: 16px;
+  color: var(--navy-dark);
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--navy-light);
+}
+
+/* --- টেবিল --- */
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th {
+  text-align: left;
+  padding: 10px 12px;
+  background: var(--bg-light);
+  color: var(--navy-dark);
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+}
+
+.data-table__empty {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 24px;
+}
+
+/* স্ট্যাটাস ব্যাজ */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge--pending {
+  background: var(--warning-bg);
+  color: var(--warning);
+}
+
+.status-badge--approved {
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.status-badge--rejected {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* =========================================================
+   মোডাল (কনফার্মেশন পপ-আপ)
+   ========================================================= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 37, 69, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 100;
+}
+
+.modal__box {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 24px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal__title {
+  margin: 0 0 10px;
+  color: var(--navy-dark);
+  font-size: 16px;
+}
+
+.modal__text {
+  margin: 0 0 18px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* =========================================================
+   টোস্ট নোটিফিকেশন
+   ========================================================= */
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--navy-dark);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  z-index: 200;
+}
+
+.toast--success { background: var(--success); }
+.toast--error { background: var(--danger); }
+
+/* =========================================================
+   রেসপন্সিভ (মোবাইল)
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .topbar {
+    padding: 12px 16px;
+  }
+  .topbar__title {
+    font-size: 14px;
+  }
+  .dashboard {
+    padding: 16px;
+  }
+  .stats-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
