@@ -1,6 +1,6 @@
 // আপনার সুপাবেজ কনফিগারেশন
 const SUPABASE_URL = 'https://nrwnsedtvkxkdhmvmoga.supabase.co'; // আপনার প্রজেক্টের URL
-const SUPABASE_ANON_KEY = 'sb_publishable_v98...'; // আপনার ড্যাশবোর্ডে পাওয়া Publishable Key টি এখানে বসান
+const SUPABASE_ANON_KEY = 'sb_publishable_v9Bas6zol_BdqscwLftaZA_OYnWIuJ3; // আপনার ড্যাশবোর্ডে পাওয়া Publishable Key টি এখানে বসান
 
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 /* ===========================
