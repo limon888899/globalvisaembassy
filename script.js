@@ -2,6 +2,7 @@
 const SUPABASE_URL = 'https://nrwnsedtvkxkdhmvmoga.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_v9Bas6zol_BdqscwLftaZA_OYnWIuJ3';
 
+// সুপাবেজ ক্লায়েন্ট তৈরি করা
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* =========================================================
