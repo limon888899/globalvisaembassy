@@ -16,12 +16,12 @@
 const CONFIG = {
   // আপনার ব্যাকএন্ড API এর বেস URL এখানে দিন
   // উদাহরণ: "https://api.yoursite.com" বা "http://localhost:5000"
-  API_BASE_URL: "https://"http://localhost:3000/api"
+  API_BASE_URL: "https://localhost:3000/api"
 
   // টেস্টিং এর জন্য MOCK_MODE = true রাখলে কোনো ব্যাকএন্ড ছাড়াই
   // ডেমো ডাটা দিয়ে UI টেস্ট করতে পারবেন।
   // আসল ব্যাকএন্ড কানেক্ট করার পর এটা false করে দিন।
-  MOCK_MODE: true,
+  MOCK_MODE: false,
 };
 
 /* =========================================================
